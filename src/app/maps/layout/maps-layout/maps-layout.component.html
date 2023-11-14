@@ -1,3 +1,6 @@
-<maps-side-menu />
+<maps-loading *ngIf="!isUserLocationReady; else mapReady"/>
 
-<router-outlet />
+<ng-template #mapReady>
+  <router-outlet />
+  <maps-search-bar />
+</ng-template>
